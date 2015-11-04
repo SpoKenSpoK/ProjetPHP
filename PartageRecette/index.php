@@ -1,8 +1,12 @@
 {include 'config.inc.php'}
 
 <?php
-	{$data = array()}
-	{$_GET = $current_page}
-	{for $_PAGES}
+	$smarty->assign('data', array());
+	{$current_page = $_GET}
+	{foreach from=$_PAGES item=$element}
+		{if $element == $current_page}
+			{$data['$element']=$current_page}
+		{/if}
+	{/foreach}
 
 ?>

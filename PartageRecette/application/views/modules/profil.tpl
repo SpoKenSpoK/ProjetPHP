@@ -1,3 +1,3 @@
 {extends '../layout.tpl'}
 
-{Bienvenu $data['user'].nom $data['user'].prenom}
+Bienvenu {$data['user'].nom $data['user'].prenom}
