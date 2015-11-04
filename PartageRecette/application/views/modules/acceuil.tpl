@@ -1,4 +1,4 @@
-{extends '/layout/layout.tpl'}
+{extends '/views/layout.tpl'}
 
 <article>
 	<p>BIENVENUE NARVALO</p>

@@ -1,1 +1,2 @@
-{extends '/layout/layout.tpl'}
+{extends '/views/layout.tpl'}
+
