@@ -1,10 +1,10 @@
-{extends '/views/layout.tpl'}
+{extends '../layout.tpl'}
 
 <article>
 	<p>BIENVENUE NARVALO</p>
 </article>
 <section>
-	{foreach $alea as $value}
+	{foreach $data['alea'] as $value}
 		{$value}
 	{/foreach}
 </section>
