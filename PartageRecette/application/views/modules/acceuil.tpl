@@ -1,11 +1,10 @@
-{extends '../layout.tpl'}
 
-<article>
-	<p>BIENVENUE NARVALO</p>
-</article>
-<section>
-	{foreach $data['alea'] as $value}
-		{$value}
-	{/foreach}
-</section>
-
+	<article>
+		<p>BIENVENUE NARVALO</p>
+	</article>
+	<section>
+		<!--{foreach $data['alea'] as $value}
+			{$value}
+		{/foreach}-->
+		<p>bonjour</p>
+	</section>

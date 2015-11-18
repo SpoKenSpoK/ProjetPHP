@@ -8,6 +8,9 @@
 		<header>
 			{include 'layout/layout_entete.inc.tpl'}
 		</header>
+		<main>
+			{block name=main}{/block}
+		</main>
 		<footer>
 			{include 'layout/layout_pied.inc.tpl'}
 		</footer>
