@@ -3,7 +3,7 @@
 $votreNom = "HECKEL";
 $votrePrenom = "Thibault";
 
-$user = array( nom = $votreNom, prenom = $votrePrenom);
-$data['user']= $user;
+$user = array( 'nom' => $votreNom, 'prenom' => $votrePrenom);
+$data['user'] = $user;
 
 ?>

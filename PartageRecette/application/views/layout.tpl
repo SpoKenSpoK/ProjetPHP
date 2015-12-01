@@ -6,13 +6,13 @@
 	</head>
 	<body>
 		<header>
-			{include 'C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/layout/layout_entete.inc.tpl'}
+			{include '../layout/layout_entete.inc.tpl'}
 		</header>
 		<main>
-			{block name=main}{/block}
+			{block name="main"}{/block}
 		</main>
 		<footer>
-			{include 'C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/layout/layout_pied.inc.tpl'}
+			{include '../layout/layout_pied.inc.tpl'}
 		</footer>
 	</body>
 

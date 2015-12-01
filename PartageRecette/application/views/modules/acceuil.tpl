@@ -1,4 +1,4 @@
-{include 'C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/layout.tpl'}
+{extends '../layout.tpl'}
 {block name=main}
 	<article>
 		<p>BIENVENUE NARVALO</p>
@@ -7,6 +7,5 @@
 		{foreach $data['alea'] as $value}
 			{$value}
 		{/foreach}
-		<p>bonjour</p>
 	</section>
 {/block}

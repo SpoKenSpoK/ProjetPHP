@@ -1,2 +1,1 @@
-<h1> creater by Thibault HECKEL <h1>
-<p> test </p>
+<p><b> creater by Thibault HECKEL & Guillaume BOEHM </b></p>

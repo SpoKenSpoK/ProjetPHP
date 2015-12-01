@@ -1,3 +1,5 @@
 {extends '../layout.tpl'}
 
-Bienvenu {$data['user'].nom $data['user'].prenom}
+{block name=main}
+Bienvenu {$data['user'].nom} {$data['user'].prenom}
+{/block}
