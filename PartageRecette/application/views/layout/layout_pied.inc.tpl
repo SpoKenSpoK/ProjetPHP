@@ -1,1 +1,1 @@
-<p><b> creater by Thibault HECKEL & Guillaume BOEHM </b></p>
+<p><b> created by Thibault HECKEL & Guillaume BOEHM </b></p>

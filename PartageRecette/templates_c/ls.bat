@@ -1,1 +1,0 @@
-attrib -r C:\UwAmp\www\ProjetPHP\PartageRecette\templates_c\*.php

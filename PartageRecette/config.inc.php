@@ -16,10 +16,10 @@ catch(Exception $e){
 	exit();
 }
 
-$_PAGES = array(""=>"acceuil", 
-				"connexion"=>"connexion", 
+$_PAGES = array(""=>"acceuil",
+				"connexion"=>"connexion",
 				"profil"=>"profil", 
-				"details"=>"recette_detail", 
+				"details"=>"recette_detail",
 				"liste"=>"recette_liste");
 
 $HOME_PAGE = "acceuil";
