@@ -1,6 +1,5 @@
 {extends '../layout.tpl'}
 {block name=main}
-<<<<<<< HEAD
 	{if isset($data['rct_req'])}
 
 		<h2 class="Label_idc">{foreach $data['label_cat_desc'] as $cat_label}{$cat_label.CAT_LABEL}{/foreach}</h2>
@@ -42,14 +41,3 @@
 		{/foreach}
 	{/if}
 {/block}
-=======
-	{foreach $data['cat_req'] as $cat}
-		<article>
-			<img src= {"media/categories/"|cat: $cat.CAT_ILLUSTRATION}/>		
-			<h2>{$cat.CAT_LABEL}</h2>
-			<p>{$cat.CAT_DESCRIPTION}</p>
-			<a href={'index.php?page=liste&idc='|cat: $cat.CAT_ID}>Voir les recettes</a>
-		</article>
-	{/foreach}
-{/block}
->>>>>>> 608e90d589d3ebcd20c7fcb5170c2c49de238970
