@@ -16,13 +16,13 @@ catch(Exception $e){
 	exit();
 }
 
-$_PAGES = array(""=>"acceuil",
+$_PAGES = array(""=>"accueil",
 				"connexion"=>"connexion",
 				"profil"=>"profil", 
 				"details"=>"recette_detail",
 				"liste"=>"recette_liste");
 
-$HOME_PAGE = "acceuil";
-$ERROR_404 = "acceuil";
+$HOME_PAGE = "accueil";
+$ERROR_404 = "accueil";
 
 ?>
