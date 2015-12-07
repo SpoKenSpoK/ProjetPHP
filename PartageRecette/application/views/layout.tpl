@@ -9,6 +9,7 @@
 			{include '../layout/layout_entete.inc.tpl'}
 		</header>
 		<main>
+		<!--<img src="C:/UwAmp/www/ProjetPHP/PartageRecette/media/categories/a4aky34o.png"/>-->
 			{block name="main"}{/block}
 		</main>
 		<footer>
