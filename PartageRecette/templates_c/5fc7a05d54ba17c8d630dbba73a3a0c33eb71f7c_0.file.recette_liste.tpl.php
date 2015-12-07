@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-12-07 10:47:48
+<?php /* Smarty version 3.1.24, created on 2015-12-07 10:54:29
          compiled from "C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/modules/recette_liste.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:6948566555c4804559_13888560%%*/
+/*%%SmartyHeaderCode:3123756655755396f85_88276853%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,38 +9,40 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5fc7a05d54ba17c8d630dbba73a3a0c33eb71f7c' => 
     array (
       0 => 'C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/modules/recette_liste.tpl',
-      1 => 1449481667,
+      1 => 1449481914,
       2 => 'file',
     ),
     '1b4175c3e93a90a78fbf395ab4c71f04d3800a25' => 
     array (
       0 => 'C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/layout.tpl',
-      1 => 1449481316,
+      1 => 1449482026,
       2 => 'file',
     ),
-    'f167cc81a72d2781d838fdf160d867ecbdf6dd97' => 
+    '58cfd8ddb720346fa306f1fcab2a3ef3b8179492' => 
     array (
-      0 => 'f167cc81a72d2781d838fdf160d867ecbdf6dd97',
+      0 => '58cfd8ddb720346fa306f1fcab2a3ef3b8179492',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '6948566555c4804559_13888560',
+  'nocache_hash' => '3123756655755396f85_88276853',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_566555c4946d01_86894221',
+  'unifunc' => 'content_566557554b1081_69787386',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_566555c4946d01_86894221')) {
-function content_566555c4946d01_86894221 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_566557554b1081_69787386')) {
+function content_566557554b1081_69787386 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '6948566555c4804559_13888560';
+$_smarty_tpl->properties['nocache_hash'] = '3123756655755396f85_88276853';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
 		<title> Welcome on what to cook </title>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+							   integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	</head>
 	<body>
 		<header>
@@ -51,7 +53,7 @@ $_smarty_tpl->properties['nocache_hash'] = '6948566555c4804559_13888560';
 		<main>
 		<!--<img src="C:/UwAmp/www/ProjetPHP/PartageRecette/media/categories/a4aky34o.png"/>-->
 			<?php
-$_smarty_tpl->properties['nocache_hash'] = '6948566555c4804559_13888560';
+$_smarty_tpl->properties['nocache_hash'] = '3123756655755396f85_88276853';
 ?>
 
 	<?php if (isset($_smarty_tpl->tpl_vars['data']->value['rct_req'])) {?>
@@ -85,9 +87,8 @@ $foreach_cat_desc_Sav = $_smarty_tpl->tpl_vars['cat_desc'];
 echo $_smarty_tpl->tpl_vars['cat_desc']->value['CAT_DESCRIPTION'];
 $_smarty_tpl->tpl_vars['cat_desc'] = $foreach_cat_desc_Sav;
 }
-?></b>
-		</p>
-
+?>
+		</b></p>
 
 		<?php
 $_from = $_smarty_tpl->tpl_vars['data']->value['rct_req'];
@@ -183,6 +184,7 @@ $_smarty_tpl->tpl_vars['cat'] = $foreach_cat_Sav;
 		</footer>
 	</body>
 
-</html><?php }
+</html>
+<?php }
 }
 ?>

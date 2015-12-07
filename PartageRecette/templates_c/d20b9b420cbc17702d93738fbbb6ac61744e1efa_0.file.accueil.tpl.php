@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-12-07 10:43:55
+<?php /* Smarty version 3.1.24, created on 2015-12-07 11:10:06
          compiled from "C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/modules/accueil.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:3316566554db65c487_56207733%%*/
+/*%%SmartyHeaderCode:1944956655afe45cbd9_01350024%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -15,7 +15,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1b4175c3e93a90a78fbf395ab4c71f04d3800a25' => 
     array (
       0 => 'C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/layout.tpl',
-      1 => 1449481316,
+      1 => 1449482026,
       2 => 'file',
     ),
     '2e771ff5dd79e56b20d606d913b375a74070b4c6' => 
@@ -25,22 +25,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '3316566554db65c487_56207733',
+  'nocache_hash' => '1944956655afe45cbd9_01350024',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_566554db6e9d14_00297295',
+  'unifunc' => 'content_56655afe4e7687_99827969',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_566554db6e9d14_00297295')) {
-function content_566554db6e9d14_00297295 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56655afe4e7687_99827969')) {
+function content_56655afe4e7687_99827969 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '3316566554db65c487_56207733';
+$_smarty_tpl->properties['nocache_hash'] = '1944956655afe45cbd9_01350024';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
 		<title> Welcome on what to cook </title>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+							   integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	</head>
 	<body>
 		<header>
@@ -51,7 +53,7 @@ $_smarty_tpl->properties['nocache_hash'] = '3316566554db65c487_56207733';
 		<main>
 		<!--<img src="C:/UwAmp/www/ProjetPHP/PartageRecette/media/categories/a4aky34o.png"/>-->
 			<?php
-$_smarty_tpl->properties['nocache_hash'] = '3316566554db65c487_56207733';
+$_smarty_tpl->properties['nocache_hash'] = '1944956655afe45cbd9_01350024';
 ?>
 
 	<article>
@@ -85,6 +87,7 @@ $_smarty_tpl->tpl_vars['value'] = $foreach_value_Sav;
 		</footer>
 	</body>
 
-</html><?php }
+</html>
+<?php }
 }
 ?>
