@@ -15,7 +15,7 @@
 	FROM t_recette_rct
 	where RCT_ID = $_REQUEST['idr'];
 
-		
+
 
 		$data['rct_req'] = $request->fetchAll(PDO::FETCH_ASSOC);
 
