@@ -1,4 +1,4 @@
-<h1>Au Bon Plat</h1>
+<h1>What to Cook</h1>
 <nav>
 	<ul>
 		<li><a href="index.php?page=">Accueil</a></li>
