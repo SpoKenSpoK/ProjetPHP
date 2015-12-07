@@ -2,7 +2,12 @@
 {block name=main}
 	{if isset($data['rct_req'])}
 
-		<h2 class="Label_idc">{foreach $data['label_cat_desc'] as $cat_label}{$cat_label.CAT_LABEL}{/foreach}</h2>
+		<h2 class="Label_idc">{foreach $data['label_cat_desc'] as $cat_label}{$cat_label.CAT_LABEL}{/foreach}
+		</h2>
+
+		<p class="desc_idc"><b>{foreach $data['label_cat_desc'] as $cat_desc}{$cat_desc.CAT_DESCRIPTION}{/foreach}
+		</b></p>
+
 
 		{foreach $data['rct_req'] as $rct}
 			<article class="rct">
