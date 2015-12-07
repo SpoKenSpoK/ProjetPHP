@@ -20,9 +20,7 @@
 					<img class="img_rct" src={"../media/"|cat:$uti.UTI_LOGIN|cat:$rct.RCT_ILLUSTRATION} alt={"img_rct_"|cat: $rct.RCT_ID}>
 				{/foreach}
 
-				<p class="description_rct">
-				{$rct.RCT_DESCRIPTION}
-				</p>
+				<p class="description_rct"> {$rct.RCT_DESCRIPTION} </p>
 
 				<a class="voir_la_recettes" href={'index.php?page=details&idr='|cat: $rct.RCT_ID}>Voir la recettes</a>
 
