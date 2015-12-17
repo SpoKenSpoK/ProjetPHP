@@ -16,7 +16,7 @@
 				<h3 class="titre_rct_list">{$rct.RCT_TITRE}</h3>
 
 				{foreach $data['uti_info'] as $uti}
-					<img class="img_rct" src={"../media/"|cat:$uti.UTI_LOGIN|cat:$rct.RCT_ILLUSTRATION} alt={"img_rct_"|cat: $rct.RCT_ID}>
+					<img class="img_rct" src={"./media/"|cat: $uti.UTI_LOGIN|cat:"/"|cat: $rct.RCT_ILLUSTRATION} alt={"img_rct_"|cat: $rct.RCT_ID}>
 				{/foreach}
 
 				<p class="description_rct"> {$rct.RCT_DESCRIPTION} </p>
@@ -31,7 +31,7 @@
 		{foreach $data['cat_req'] as $cat}
 			<article class="categories">
 
-				<img class="img_cat" src={"../media/categories/"|cat: $cat.CAT_ILLUSTRATION} alt={"img_cat_"|cat: $cat.CAT_ID}>
+				<img class="img_cat" src= {"./media/categories/"|cat: $cat.CAT_ILLUSTRATION} alt={"img_cat_"|cat: $cat.CAT_ID}>
 
 				<h2 class="label_cat">{$cat.CAT_LABEL}</h2>
 
