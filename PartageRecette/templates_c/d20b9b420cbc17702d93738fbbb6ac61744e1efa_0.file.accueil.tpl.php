@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-12-07 11:10:06
+<?php /* Smarty version 3.1.24, created on 2015-12-19 12:40:43
          compiled from "C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/modules/accueil.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1944956655afe45cbd9_01350024%%*/
+/*%%SmartyHeaderCode:202445675423b3062f8_97520226%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -15,7 +15,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1b4175c3e93a90a78fbf395ab4c71f04d3800a25' => 
     array (
       0 => 'C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/layout.tpl',
-      1 => 1449482026,
+      1 => 1450523864,
       2 => 'file',
     ),
     '2e771ff5dd79e56b20d606d913b375a74070b4c6' => 
@@ -25,16 +25,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '1944956655afe45cbd9_01350024',
+  'nocache_hash' => '202445675423b3062f8_97520226',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_56655afe4e7687_99827969',
+  'unifunc' => 'content_5675423b3d24e9_11877263',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56655afe4e7687_99827969')) {
-function content_56655afe4e7687_99827969 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5675423b3d24e9_11877263')) {
+function content_5675423b3d24e9_11877263 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1944956655afe45cbd9_01350024';
+$_smarty_tpl->properties['nocache_hash'] = '202445675423b3062f8_97520226';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,15 +45,15 @@ $_smarty_tpl->properties['nocache_hash'] = '1944956655afe45cbd9_01350024';
 							   integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	</head>
 	<body>
-		<header>
-			<?php echo $_smarty_tpl->getSubTemplate ('../layout/layout_entete.inc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+		<div class="container">
+			<header>
+				<?php echo $_smarty_tpl->getSubTemplate ('../layout/layout_entete.inc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
-		</header>
-		<main>
-		<!--<img src="C:/UwAmp/www/ProjetPHP/PartageRecette/media/categories/a4aky34o.png"/>-->
-			<?php
-$_smarty_tpl->properties['nocache_hash'] = '1944956655afe45cbd9_01350024';
+			</header>
+			<main>
+				<?php
+$_smarty_tpl->properties['nocache_hash'] = '202445675423b3062f8_97520226';
 ?>
 
 	<article>
@@ -79,12 +79,13 @@ $_smarty_tpl->tpl_vars['value'] = $foreach_value_Sav;
 ?>
 	</section>
 
-		</main>
-		<footer>
-			<?php echo $_smarty_tpl->getSubTemplate ('../layout/layout_pied.inc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+			</main>
+			<footer>
+				<?php echo $_smarty_tpl->getSubTemplate ('../layout/layout_pied.inc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
-		</footer>
+			</footer>
+		</div>
 	</body>
 
 </html>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-12-07 11:51:27
+<?php /* Smarty version 3.1.24, created on 2015-12-24 11:15:16
          compiled from "C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/modules/connexion.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:25656566564afd864b7_96538970%%*/
+/*%%SmartyHeaderCode:20949567bc5b5000982_02089799%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,32 +9,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a4c466f2fe71bea1293756934898044c80baa563' => 
     array (
       0 => 'C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/modules/connexion.tpl',
-      1 => 1449485290,
+      1 => 1450952100,
       2 => 'file',
     ),
     '1b4175c3e93a90a78fbf395ab4c71f04d3800a25' => 
     array (
       0 => 'C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/layout.tpl',
-      1 => 1449482026,
+      1 => 1450523864,
       2 => 'file',
     ),
-    '8ad648178ae1a4ffdab99f9e405a8eb43972cc89' => 
+    '7d18e25684dcf8cb40ed0627339da28fafa41c57' => 
     array (
-      0 => '8ad648178ae1a4ffdab99f9e405a8eb43972cc89',
+      0 => '7d18e25684dcf8cb40ed0627339da28fafa41c57',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '25656566564afd864b7_96538970',
+  'nocache_hash' => '20949567bc5b5000982_02089799',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_566564afe04fa6_82317395',
+  'unifunc' => 'content_567bc5b508e4b0_53086778',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_566564afe04fa6_82317395')) {
-function content_566564afe04fa6_82317395 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_567bc5b508e4b0_53086778')) {
+function content_567bc5b508e4b0_53086778 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '25656566564afd864b7_96538970';
+$_smarty_tpl->properties['nocache_hash'] = '20949567bc5b5000982_02089799';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,29 +45,32 @@ $_smarty_tpl->properties['nocache_hash'] = '25656566564afd864b7_96538970';
 							   integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	</head>
 	<body>
-		<header>
-			<?php echo $_smarty_tpl->getSubTemplate ('../layout/layout_entete.inc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+		<div class="container">
+			<header>
+				<?php echo $_smarty_tpl->getSubTemplate ('../layout/layout_entete.inc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
-		</header>
-		<main>
-		<!--<img src="C:/UwAmp/www/ProjetPHP/PartageRecette/media/categories/a4aky34o.png"/>-->
-			<?php
-$_smarty_tpl->properties['nocache_hash'] = '25656566564afd864b7_96538970';
+			</header>
+			<main>
+				<?php
+$_smarty_tpl->properties['nocache_hash'] = '20949567bc5b5000982_02089799';
 ?>
 
-	<form action="connexion.inc.php" method="post">
-		<label for="form-nom">Entrez votre nom :</label><br/>
-		<input name="nom" id="form-nom" type="text" size="25" /><br/>
+	<form action="application/modules/connexion.inc.php" method="post">
+		<label for="form-login">Entrez votre login :</label><br/>
+		<input name="login" id="form-login" type="text" size="25" /><br/>
+		<label for="form-prenom">Entrez votre mot de passe :</label><br/>
+		<input name="mdp" id="form-mdp" type="password" size="25" /><br/>
 		<input type="submit" name="form_test" value="Envoyer"/>
 	</form>
 
-		</main>
-		<footer>
-			<?php echo $_smarty_tpl->getSubTemplate ('../layout/layout_pied.inc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+			</main>
+			<footer>
+				<?php echo $_smarty_tpl->getSubTemplate ('../layout/layout_pied.inc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
-		</footer>
+			</footer>
+		</div>
 	</body>
 
 </html>

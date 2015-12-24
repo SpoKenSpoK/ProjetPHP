@@ -7,7 +7,8 @@
 	if(isset($_GET["page"])){
 		if(array_key_exists($_GET["page"], $_PAGES)){
 			include 'application/modules/'.$_PAGES[$_GET["page"]].'.inc.php';
-			$smarty->assign("data",$data);
+			if(isset($data))
+				$smarty->assign("data",$data);
 		}
 		else
 			include 'application/modules/'.$ERROR_404.'.inc.php';

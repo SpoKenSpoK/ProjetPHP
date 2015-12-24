@@ -16,7 +16,7 @@
 				</ul>
 
 				{foreach $data['uti_info'] as $uti}
-					<img class="img_detail" src={"../media/"|cat:$uti.UTI_LOGIN|cat:$rct.RCT_ILLUSTRATION} alt={"img_rct_"|cat: $rct.RCT_ID}>
+					<img class="img_detail" src={"./media/"|cat:$uti.UTI_LOGIN|cat:"/"|cat:$rct.RCT_ILLUSTRATION} alt={"img_rct_"|cat: $rct.RCT_ID}>
 				{/foreach}
 
 				<p class="separateur"/>
