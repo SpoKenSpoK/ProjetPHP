@@ -24,7 +24,26 @@ if(isset($_REQUEST['login']) && isset($_REQUEST['mdp'])){
 	$login = $_REQUEST['login'];
 	$mdp = $_REQUEST['mdp'];
 
-	if(1/*(requete pour sortir ce login)*/ /*&& $mdp == /*(requete pour faire sortir juste le mot de passe de l'utilisateur $login)*/){
+	$request_login=$PDO_BDD->query('SELECT UTI_LOGIN
+		from t_utilisateur_uti');
+
+	$login_ok = false;
+	$pwd_ok = false;
+
+	foreach ($request_login->fetchAll(PDO::FETCH_ASSOC) as $value)
+		if($value == $login)
+			$login_ok = true;
+
+	if($login_ok){
+		$request_pwd=$PDO_BDD->query('SELECT UTI_PASS
+			from t_utilisateur_uti where UTI_LOGIN = '.$login);
+
+		foreach ($request_pwd->fetchAll(PDO::FETCH_ASSOC) as $value)
+			if($value == $mdp)
+				$mdp_ok = true;
+	}
+
+	if($login_ok && $mdp_ok){
 		session_start();
 		$_SESSION['login'] = $login;
 
