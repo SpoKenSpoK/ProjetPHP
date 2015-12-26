@@ -37,4 +37,10 @@
 
 	{/if}
 
+	{if isset($data['session']['login'])}
+
+		lololololololololol
+
+	{/if}
+
 {/block}

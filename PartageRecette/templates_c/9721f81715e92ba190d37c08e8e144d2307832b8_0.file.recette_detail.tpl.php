@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-12-24 11:04:09
+<?php /* Smarty version 3.1.24, created on 2015-12-26 16:26:44
          compiled from "C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/modules/recette_detail.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:12387567bc319e93287_80111023%%*/
+/*%%SmartyHeaderCode:9051567eb1b4d294f8_85492744%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,7 +9,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9721f81715e92ba190d37c08e8e144d2307832b8' => 
     array (
       0 => 'C:/UwAmp/www/ProjetPHP/PartageRecette/application/views/modules/recette_detail.tpl',
-      1 => 1450522889,
+      1 => 1451143601,
       2 => 'file',
     ),
     '1b4175c3e93a90a78fbf395ab4c71f04d3800a25' => 
@@ -18,23 +18,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       1 => 1450523864,
       2 => 'file',
     ),
-    '83be68ce3ec6fed6152039a79ff8664af75d5a3e' => 
+    'b2fc54bba325e6dec3f8aa6f1c9df26095306ba3' => 
     array (
-      0 => '83be68ce3ec6fed6152039a79ff8664af75d5a3e',
+      0 => 'b2fc54bba325e6dec3f8aa6f1c9df26095306ba3',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '12387567bc319e93287_80111023',
+  'nocache_hash' => '9051567eb1b4d294f8_85492744',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_567bc31a694c68_94131969',
+  'unifunc' => 'content_567eb1b53cf8b9_03325470',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_567bc31a694c68_94131969')) {
-function content_567bc31a694c68_94131969 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_567eb1b53cf8b9_03325470')) {
+function content_567eb1b53cf8b9_03325470 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '12387567bc319e93287_80111023';
+$_smarty_tpl->properties['nocache_hash'] = '9051567eb1b4d294f8_85492744';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -53,7 +53,7 @@ $_smarty_tpl->properties['nocache_hash'] = '12387567bc319e93287_80111023';
 			</header>
 			<main>
 				<?php
-$_smarty_tpl->properties['nocache_hash'] = '12387567bc319e93287_80111023';
+$_smarty_tpl->properties['nocache_hash'] = '9051567eb1b4d294f8_85492744';
 ?>
 
 	<?php if (isset($_smarty_tpl->tpl_vars['data']->value['rct_req'])) {?>
@@ -139,6 +139,12 @@ $_smarty_tpl->tpl_vars['uti'] = $foreach_uti_Sav;
 $_smarty_tpl->tpl_vars['rct'] = $foreach_rct_Sav;
 }
 ?>
+
+	<?php }?>
+
+	<?php if (isset($_smarty_tpl->tpl_vars['data']->value['session']['login'])) {?>
+
+		lololololololololol
 
 	<?php }?>
 

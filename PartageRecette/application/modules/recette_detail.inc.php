@@ -25,8 +25,8 @@
 						FROM t_recette_rct
 						where RCT_ID = '.$_REQUEST['idr'].')');
 		$data['uti_info'] = $request->fetchAll(PDO::FETCH_ASSOC);
-
-
-
 	}
+
+	if(isset($_SESSION['login']))
+		$data['session'] = $_SESSION;
 ?>

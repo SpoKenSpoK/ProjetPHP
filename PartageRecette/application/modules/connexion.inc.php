@@ -30,20 +30,23 @@ if(isset($_REQUEST['login']) && isset($_REQUEST['mdp'])){
 	$login_ok = false;
 	$pwd_ok = false;
 
-	foreach ($request_login->fetchAll(PDO::FETCH_ASSOC) as $value)
-		if($value == $login)
-			$login_ok = true;
+	foreach ($request_login->fetchAll(PDO::FETCH_ASSOC) as $value) // j'ai pas vraiment compris pourquoi il falait deux foreach je l'ai un peu fait a taton
+		foreach ($value as $value2) 
+			if($value2 == $login)
+				$login_ok = true;
 
 	if($login_ok){
-		$request_pwd=$PDO_BDD->query('SELECT UTI_PASS
-			from t_utilisateur_uti where UTI_LOGIN = '.$login);
+		$request_pwd=$PDO_BDD->query("SELECT UTI_PASS
+			from t_utilisateur_uti where UTI_LOGIN = '".$login."'");
 
 		foreach ($request_pwd->fetchAll(PDO::FETCH_ASSOC) as $value)
-			if($value == $mdp)
-				$mdp_ok = true;
+			foreach ($value as $value2)
+				if($value2 == $mdp)
+					$mdp_ok = true;
 	}
 
 	if($login_ok && $mdp_ok){
+		session_set_cookie_params(time() + 3600 * 24 * 2);
 		session_start();
 		$_SESSION['login'] = $login;
 
