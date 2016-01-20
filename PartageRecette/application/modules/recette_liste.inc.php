@@ -1,7 +1,6 @@
 <?php
-
 	$request=$PDO_BDD->query('SELECT CAT_LABEL,CAT_DESCRIPTION, CAT_ILLUSTRATION, CAT_ID
-FROM t_categorie_cat');
+								FROM t_categorie_cat');
 
 	$data['cat_req'] = $request->fetchAll(PDO::FETCH_ASSOC);
 
@@ -25,8 +24,6 @@ FROM t_categorie_cat');
 					FROM tj_cat_rct
 					WHERE cat_id = '.$_REQUEST['idc'].')');
 
-
-
 	$data['rct_req'] = $request->fetchAll(PDO::FETCH_ASSOC);
 
 	$request=$PDO_BDD->query('SELECT CAT_LABEL, CAT_DESCRIPTION FROM t_categorie_cat WHERE CAT_ID = '.$_REQUEST['idc']);
@@ -44,7 +41,8 @@ FROM t_categorie_cat');
 									WHERE cat_id = '.$_REQUEST['idc'].'))');
 	$data['uti_info'] = $request->fetchAll(PDO::FETCH_ASSOC);
 
-
+	if(isset($_SESSION['login']))
+		$data['session'] = true;
 
 	}
 

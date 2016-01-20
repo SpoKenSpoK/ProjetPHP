@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	
 	date_default_timezone_set('Europe/Paris');
 	include 'application/libraries/smarty-3.1.24/libs/Smarty.class.php';
 	include 'config.inc.php';
@@ -7,7 +9,7 @@
 	if(isset($_GET["page"])){
 		if(array_key_exists($_GET["page"], $_PAGES)){
 			include 'application/modules/'.$_PAGES[$_GET["page"]].'.inc.php';
-			if(isset($data))
+			if(isset($data))	
 				$smarty->assign("data",$data);
 		}
 		else

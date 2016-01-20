@@ -1,4 +1,7 @@
 <nav>
-	<a href="#">Acceuil</a>
-	<a href="#">Les Recettes</a>
+	<ul>
+		<li><a href="index.php?page=">Accueil</a></li>
+		<li><a href="index.php?page=liste">Recettes</a></li>
+		<li><a href="index.php?page=connexion">Connexion</a></li>
+	</ul>
 </nav>

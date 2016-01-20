@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2015-12-28 15:25:06
+<?php /* Smarty version 3.1.24, created on 2016-01-19 19:39:34
          compiled from "C:/UwAmp/www/Projet_PHP/PartageRecette/application/views/modules/accueil.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:305256814642140012_08085250%%*/
+/*%%SmartyHeaderCode:5209569e82e671d026_91916448%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -15,7 +15,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '996da188aec477b38394b859fc0ad89f8b3474e9' => 
     array (
       0 => 'C:/UwAmp/www/Projet_PHP/PartageRecette/application/views/layout.tpl',
-      1 => 1451312357,
+      1 => 1453228753,
       2 => 'file',
     ),
     '9aa3f50cc380b415bbd5eab3589045f5ce2be2e3' => 
@@ -25,16 +25,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '305256814642140012_08085250',
+  'nocache_hash' => '5209569e82e671d026_91916448',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_568146421a95a2_08289106',
+  'unifunc' => 'content_569e82e6790d44_94193422',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_568146421a95a2_08289106')) {
-function content_568146421a95a2_08289106 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_569e82e6790d44_94193422')) {
+function content_569e82e6790d44_94193422 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '305256814642140012_08085250';
+$_smarty_tpl->properties['nocache_hash'] = '5209569e82e671d026_91916448';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -50,9 +50,10 @@ $_smarty_tpl->properties['nocache_hash'] = '305256814642140012_08085250';
 ?>
 
 			</header>
+			<div class="divieur"></div>
 			<main>
 				<?php
-$_smarty_tpl->properties['nocache_hash'] = '305256814642140012_08085250';
+$_smarty_tpl->properties['nocache_hash'] = '5209569e82e671d026_91916448';
 ?>
 
 	<article>
@@ -79,6 +80,7 @@ $_smarty_tpl->tpl_vars['value'] = $foreach_value_Sav;
 	</section>
 
 			</main>
+			<div class="divieur"></div>
 			<footer>
 				<?php echo $_smarty_tpl->getSubTemplate ('../layout/layout_pied.inc.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>

@@ -11,8 +11,6 @@
 		{foreach $data['rct_req'] as $rct}
 			<article class="rct">
 
-			<img class="img_rct">
-
 				<h3 class="titre_rct_list">{$rct.RCT_TITRE}</h3>
 
 				{foreach $data['uti_info'] as $uti}
@@ -36,4 +34,5 @@
 			</article>
 		{/foreach}
 	{/if}
+
 {/block}

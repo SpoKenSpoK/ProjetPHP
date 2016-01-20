@@ -10,9 +10,11 @@
 			<header>
 				{include '../layout/layout_entete.inc.tpl'}
 			</header>
+			<div class="divieur"></div>
 			<main>
 				{block name="main"}{/block}
 			</main>
+			<div class="divieur"></div>
 			<footer>
 				{include '../layout/layout_pied.inc.tpl'}
 			</footer>
