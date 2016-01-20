@@ -1,37 +1,39 @@
 <?php
 
 	if(isset($_POST['delete_profil'])){
-		//supprimer le profil
+		//supprimer les commentaires de chaque recette de l'utilisateur
+		$PDO_BDD->exec("DELETE FROM t_commentaire_com WHERE RCT_ID IN
+							(SELECT RCT_ID FROM t_recette_rct WHERE UTI_ID = ".$_SESSION['id'].")");
+
+		//supprime dans la table de liaison des recettes et categories
+		$PDO_BDD->exec("DELETE FROM tj_cat_rct WHERE RCT_ID IN
+				(SELECT RCT_ID FROM t_recette_rct WHERE UTI_ID = ".$_SESSION['id'].")");
+
+		//supprime les recettes de l'utilisateur
+		$PDO_BDD->exec("DELETE FROM t_recette_rct WHERE UTI_ID = ".$_SESSION['id']);
+
+		//supprime le dossier
+		$folder="./media/".$_SESSION['login']."/";
+		$files = scandir($folder);
+		foreach($files as $file)
+			unlink($folder.$file);
+        rmdir("./media/".$_SESSION['login']."/");
+
+        //mettre a null le UTI_ID dans la table de commentaires
+        $PDO_BDD->exec("UPDATE t_commentaire_com SET UTI_ID = NULL WHERE UTI_ID = ".$_SESSION['id']);
+
+		//supprimer l'utilisateur
+        $PDO_BDD->exec("DELETE FROM t_utilisateur_uti WHERE UTI_ID = ".$_SESSION['id']);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		//commentaires anonymes
 
 
 		//fermer la session en même temps
-		/*
-		session_start();
 		session_destroy();
-		header('location: index.php?page=connexion');*/
-
-
+		session_start();
+		header('location: index.php?page=connexion');
 	}
 
 	if(isset($_POST['modif_profil'])) $page = 2;
@@ -70,7 +72,7 @@
 						echo "Impossible de copier le fichier dans $destination";
 
 					$PDO_BDD->exec("UPDATE t_utilisateur_uti
-					SET UTI_AVATAR = '".$newfichier."'
+					SET UTI_AVATAR = '".addslashes($newfichier)."'
 					WHERE UTI_ID = '".$_SESSION['id']."'");
 
 					$_SESSION['avatar'] = $newfichier;
@@ -78,10 +80,10 @@
 				}
 
 				$PDO_BDD->exec("UPDATE t_utilisateur_uti
-					SET UTI_MAIL = '".$_POST['mail']."',
-						UTI_NOM = '".$_POST['name']."',
-						UTI_PRENOM = '".$_POST['firstname']."',
-						UTI_PASS = '".$_POST['mdp']."'
+					SET UTI_MAIL = '".addslashes($_POST['mail'])."',
+						UTI_NOM = '".addslashes($_POST['name'])."',
+						UTI_PRENOM = '".addslashes($_POST['firstname'])."',
+						UTI_PASS = '".addslashes($_POST['mdp'])."'
 					WHERE UTI_ID = '".$_SESSION['id']."'");
 			}
 			else{
@@ -106,7 +108,7 @@
 						echo "Impossible de copier le fichier dans $destination";
 
 					$PDO_BDD->exec("UPDATE t_utilisateur_uti
-					SET UTI_AVATAR = '".$newfichier."'
+					SET UTI_AVATAR = '".addslashes($newfichier)."'
 					WHERE UTI_ID = '".$_SESSION['id']."'");
 
 					$_SESSION['avatar'] = $newfichier;
@@ -114,9 +116,9 @@
 				}
 
 				$PDO_BDD->exec("UPDATE t_utilisateur_uti
-				SET UTI_MAIL = '".$_POST['mail']."',
-					UTI_NOM = '".$_POST['name']."',
-					UTI_PRENOM = '".$_POST['firstname']."'
+				SET UTI_MAIL = '".addslashes($_POST['mail'])."',
+					UTI_NOM = '".addslashes($_POST['name'])."',
+					UTI_PRENOM = '".addslashes($_POST['firstname'])."'
 				WHERE UTI_ID = '".$_SESSION['id']."'");
 			}
 
@@ -132,28 +134,28 @@
 
 	if(isset($_POST['new_recette_form'])){
 
-		if(is_uploaded_file($$_FILES['illustration']['tmp_name']))
+		if(is_uploaded_file($_FILES['illustration']['tmp_name']))
 			if($_FILES['illustration']['size'] == 0)
 				echo "<script>alert(\"Ce fichier n'est pas conforme : taille limite dépassé\")</script>";
 
 		$PDO_BDD->exec("INSERT INTO t_recette_rct VALUES('DEFAULT',
 														'".date('Y-m-d H:i:s')."',
-														'".$_POST['titre']."',
-														'".$_POST['desc']."',
-														'".$_POST['prep']."',
-														'".$_POST['cuisson']."',
-														'".$_POST['repos']."',
-														'".$_POST['diff']."',
-														'".$_POST['cout']."',
+														'".addslashes($_POST['titre'])."',
+														'".addslashes($_POST['desc'])."',
+														'".addslashes($_POST['prep'])."',
+														'".addslashes($_POST['cuisson'])."',
+														'".addslashes($_POST['repos'])."',
+														'".addslashes($_POST['diff'])."',
+														'".addslashes($_POST['cout'])."',
 														'DEFAULT',
-														'".$_FILES['illustration']['name']."',
+														'".addslashes($_FILES['illustration']['name'])."',
 														'".$_SESSION['id']."',
-														'".$_POST['pers']."')");
+														'".addslashes($_POST['pers'])."')");
 		$request=$PDO_BDD->query("SELECT MAX(RCT_ID) FROM t_recette_rct");
 
 		foreach($request->fetchAll(PDO::FETCH_ASSOC) as $value)
 			foreach ($value as $rct_id)
-				$PDO_BDD->exec("INSERT INTO tj_cat_rct VALUES('".$_POST['cat']."','".$rct_id."')");
+				$PDO_BDD->exec("INSERT INTO tj_cat_rct VALUES('".addslashes($_POST['cat'])."','".$rct_id."')");
 	}
 
 	if(isset($_POST['new_modif_form'])){
@@ -178,24 +180,24 @@
 				echo "Impossible de copier le fichier dans $destination";	
 
 			$PDO_BDD->exec("UPDATE t_recette_rct
-							SET RCT_ILLUSTRATION = '".$newfichier."'
+							SET RCT_ILLUSTRATION = '".addslashes($newfichier)."'
 							WHERE RCT_ID = '".$_POST['rct_id_form']."'");
 		}
 
 		$PDO_BDD->exec("UPDATE t_recette_rct
-						SET RCT_TITRE = '".$_POST['titre']."',
-							RCT_DESCRIPTION = '".$_POST['desc']."',
-							RCT_TEMPS_PREPARATION = '".$_POST['prep']."',
-							RCT_TEMPS_CUISSON = '".$_POST['cuisson']."',
-							RCT_TEMPS_REPOS = '".$_POST['repos']."',
-							RCT_DIFFICULTE = '".$_POST['diff']."',
-							RCT_COUT = '".$_POST['cout']."',
-							RCT_NBPERSONNE = '".$_POST['pers']."'
-						WHERE RCT_ID = '".$_POST['rct_id_form']."'");
+						SET RCT_TITRE = '".addslashes($_POST['titre'])."',
+							RCT_DESCRIPTION = '".addslashes($_POST['desc'])."',
+							RCT_TEMPS_PREPARATION = '".addslashes($_POST['prep'])."',
+							RCT_TEMPS_CUISSON = '".addslashes($_POST['cuisson'])."',
+							RCT_TEMPS_REPOS = '".addslashes($_POST['repos'])."',
+							RCT_DIFFICULTE = '".addslashes($_POST['diff'])."',
+							RCT_COUT = '".addslashes($_POST['cout'])."',
+							RCT_NBPERSONNE = '".addslashes($_POST['pers'])."'
+						WHERE RCT_ID = '".addslashes($_POST['rct_id_form'])."'");
 
 		$PDO_BDD->exec("UPDATE tj_cat_rct
-						SET CAT_ID = ".$_POST['cat']."
-						WHERE RCT_ID = ".$_POST['rct_id_form']);
+						SET CAT_ID = ".addslashes($_POST['cat'])."
+						WHERE RCT_ID = ".addslashes($_POST['rct_id_form']));
 	}
 
 	if(isset($_POST['delete'])){
@@ -223,9 +225,9 @@
 			unlink($file);
 		}
 
-		$PDO_BDD->exec("DELETE FROM tj_cat_rct WHERE RCT_ID = ".$_POST['rct_id']);
-		$PDO_BDD->exec("DELETE FROM t_commentaire_com WHERE RCT_ID = ".$_POST['rct_id']);
-		$PDO_BDD->exec("DELETE FROM t_recette_rct WHERE RCT_ID = ".$_POST['rct_id']);
+		$PDO_BDD->exec("DELETE FROM tj_cat_rct WHERE RCT_ID = ".addslashes($_POST['rct_id']));
+		$PDO_BDD->exec("DELETE FROM t_commentaire_com WHERE RCT_ID = ".addslashes($_POST['rct_id']));
+		$PDO_BDD->exec("DELETE FROM t_recette_rct WHERE RCT_ID = ".addslashes($_POST['rct_id']));
 	}
 
 	$data['recette']=$PDO_BDD->query("SELECT * 

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2016-01-20 14:53:31
+<?php /* Smarty version 3.1.24, created on 2016-01-20 18:30:24
          compiled from "C:/UwAmp/www/Projet_PHP/PartageRecette/application/views/modules/profil.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:24603569f915b1acf99_09947310%%*/
+/*%%SmartyHeaderCode:24709569fc430ac55d7_64213642%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,7 +9,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4a9504ef9395fa020e2938d3dde1a95b93910b29' => 
     array (
       0 => 'C:/UwAmp/www/Projet_PHP/PartageRecette/application/views/modules/profil.tpl',
-      1 => 1453295795,
+      1 => 1453311007,
       2 => 'file',
     ),
     '996da188aec477b38394b859fc0ad89f8b3474e9' => 
@@ -18,23 +18,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       1 => 1453228753,
       2 => 'file',
     ),
-    '8334328e828410e5543852b1bd83ab131a1c23d8' => 
+    'd06977d92212d2a915fb687ca363e85d5c2f02b3' => 
     array (
-      0 => '8334328e828410e5543852b1bd83ab131a1c23d8',
+      0 => 'd06977d92212d2a915fb687ca363e85d5c2f02b3',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '24603569f915b1acf99_09947310',
+  'nocache_hash' => '24709569fc430ac55d7_64213642',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_569f915b368eb4_84252898',
+  'unifunc' => 'content_569fc430c52198_65044813',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_569f915b368eb4_84252898')) {
-function content_569f915b368eb4_84252898 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_569fc430c52198_65044813')) {
+function content_569fc430c52198_65044813 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '24603569f915b1acf99_09947310';
+$_smarty_tpl->properties['nocache_hash'] = '24709569fc430ac55d7_64213642';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -53,7 +53,7 @@ $_smarty_tpl->properties['nocache_hash'] = '24603569f915b1acf99_09947310';
 			<div class="divieur"></div>
 			<main>
 				<?php
-$_smarty_tpl->properties['nocache_hash'] = '24603569f915b1acf99_09947310';
+$_smarty_tpl->properties['nocache_hash'] = '24709569fc430ac55d7_64213642';
 ?>
 
 <?php if ($_smarty_tpl->tpl_vars['data']->value['page_profil'] == 2) {?>
@@ -96,6 +96,7 @@ $_smarty_tpl->properties['nocache_hash'] = '24603569f915b1acf99_09947310';
  height="150" width="150">
 		<form action="" method="post" enctype="multipart/form-data">
 			<input type="submit" name="modif_profil" value="Modifier"/>
+			<input onclick="return(confirm('Etes-vous sûr de vouloir supprimer votre profil?'))" type="submit" name="delete_profil" value="Supprimer le compte"/>
 		</form>
 	</div>
 

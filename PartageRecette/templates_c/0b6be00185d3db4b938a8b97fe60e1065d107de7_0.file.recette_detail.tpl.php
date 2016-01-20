@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.24, created on 2016-01-20 12:20:24
+<?php /* Smarty version 3.1.24, created on 2016-01-20 20:18:51
          compiled from "C:/UwAmp/www/Projet_PHP/PartageRecette/application/views/modules/recette_detail.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:8247569f6d780ee570_55824887%%*/
+/*%%SmartyHeaderCode:570569fdd9b4025f2_84650723%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,7 +9,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0b6be00185d3db4b938a8b97fe60e1065d107de7' => 
     array (
       0 => 'C:/UwAmp/www/Projet_PHP/PartageRecette/application/views/modules/recette_detail.tpl',
-      1 => 1453136313,
+      1 => 1453317530,
       2 => 'file',
     ),
     '996da188aec477b38394b859fc0ad89f8b3474e9' => 
@@ -18,23 +18,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       1 => 1453228753,
       2 => 'file',
     ),
-    'a9dd67bf40391f17252622bc3fde4af2a3087f64' => 
+    '81efa108b62862137e306ea47f6afbf035e0b0f2' => 
     array (
-      0 => 'a9dd67bf40391f17252622bc3fde4af2a3087f64',
+      0 => '81efa108b62862137e306ea47f6afbf035e0b0f2',
       1 => 0,
       2 => 'string',
     ),
   ),
-  'nocache_hash' => '8247569f6d780ee570_55824887',
+  'nocache_hash' => '570569fdd9b4025f2_84650723',
   'has_nocache_code' => false,
   'version' => '3.1.24',
-  'unifunc' => 'content_569f6d7821ba33_02242891',
+  'unifunc' => 'content_569fdd9b557b60_23972941',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_569f6d7821ba33_02242891')) {
-function content_569f6d7821ba33_02242891 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_569fdd9b557b60_23972941')) {
+function content_569fdd9b557b60_23972941 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '8247569f6d780ee570_55824887';
+$_smarty_tpl->properties['nocache_hash'] = '570569fdd9b4025f2_84650723';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -53,7 +53,7 @@ $_smarty_tpl->properties['nocache_hash'] = '8247569f6d780ee570_55824887';
 			<div class="divieur"></div>
 			<main>
 				<?php
-$_smarty_tpl->properties['nocache_hash'] = '8247569f6d780ee570_55824887';
+$_smarty_tpl->properties['nocache_hash'] = '570569fdd9b4025f2_84650723';
 ?>
 
 	<?php if (isset($_smarty_tpl->tpl_vars['data']->value['rct_req'])) {?>
@@ -187,7 +187,8 @@ $_smarty_tpl->tpl_vars['uticom'] = $foreach_uticom_Sav;
 			</form>
 			<?php } else { ?>
 				<article>
-					<?php
+					<?php if (isset($_smarty_tpl->tpl_vars['data']->value['uti_com'])) {?>
+						<?php
 $_from = $_smarty_tpl->tpl_vars['data']->value['uti_com'];
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -198,16 +199,20 @@ foreach ($_from as $_smarty_tpl->tpl_vars['uticom']->value) {
 $_smarty_tpl->tpl_vars['uticom']->_loop = true;
 $foreach_uticom_Sav = $_smarty_tpl->tpl_vars['uticom'];
 ?>
-						<?php if ($_smarty_tpl->tpl_vars['uticom']->value['UTI_ID'] == $_smarty_tpl->tpl_vars['com']->value['UTI_ID']) {?>
-							<table border="1">
-								<tr><td style="background-color : grey; color : white;">Auteur : <?php echo $_smarty_tpl->tpl_vars['uticom']->value['UTI_NOM'];?>
+							<?php if ($_smarty_tpl->tpl_vars['uticom']->value['UTI_ID'] == $_smarty_tpl->tpl_vars['com']->value['UTI_ID']) {?>
+								<table border="1">
+									<tr><td style="background-color : grey; color : white;">Auteur : <?php echo $_smarty_tpl->tpl_vars['uticom']->value['UTI_NOM'];?>
  <?php echo $_smarty_tpl->tpl_vars['uticom']->value['UTI_PRENOM'];?>
 
-						<?php }?>
-					<?php
+							<?php }?>
+						<?php
 $_smarty_tpl->tpl_vars['uticom'] = $foreach_uticom_Sav;
 }
 ?>
+					<?php } else { ?>
+						<table border="1">
+									<tr><td style="background-color : grey; color : white;">Auteur : Anonyme
+					<?php }?>
 					- Date : <?php echo $_smarty_tpl->tpl_vars['com']->value['COM_DATE'];?>
 
 					</td></tr>
@@ -234,7 +239,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['uti_info']->value) {
 $_smarty_tpl->tpl_vars['uti_info']->_loop = true;
 $foreach_uti_info_Sav = $_smarty_tpl->tpl_vars['uti_info'];
 ?>
-		<?php if (isset($_SESSION['login']) && $_SESSION['login'] != $_smarty_tpl->tpl_vars['uti_info']->value['UTI_LOGIN']) {?>
+		<?php if (isset($_SESSION['login'])) {?>
 			<form id="form" action="" method="post">
 				<fieldset>
 					<legend>Nouveau commentaire</legend>

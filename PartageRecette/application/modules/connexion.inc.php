@@ -76,49 +76,27 @@ if(isset($_POST['inscription'])){ //traite le formulaire d'inscription
 
 
 		$PDO_BDD->exec("INSERT INTO t_utilisateur_uti VALUES('DEFAULT',
-														 '".$_POST['new_login']."',
-														 '".$_POST['new_mail']."',
-														 '".$_POST['new_name']."',
-														 '".$_POST['new_firstname']."',
-														 '".$_POST['new_mdp']."',
+														 '".addslashes($_POST['new_login'])."',
+														 '".addslashes($_POST['new_mail'])."',
+														 '".addslashes($_POST['new_name'])."',
+														 '".addslashes($_POST['new_firstname'])."',
+														 '".sha1(addslashes($_POST['new_mdp']))."',
 														 'DEFAULT',
-														 '".$_FILES['new_new_avatar']['name']."')");
-
-
+														 '".addslashes($_FILES['new_new_avatar']['name'])."')");
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 if(isset($_REQUEST['login']) && isset($_REQUEST['mdp']) && isset($_REQUEST['connex'])){ //traite le formulaire de connexion
 
 	/***************************************************/
-	session_start();
-	$login = $_REQUEST['login'];
-	$mdp = $_REQUEST['mdp'];
+	$login = addslashes($_REQUEST['login']);
+	$mdp = addslashes(sha1($_REQUEST['mdp']));
 
 	$request_login=$PDO_BDD->query('SELECT UTI_LOGIN
 		from t_utilisateur_uti');
 
 	$login_ok = false;
-	$pwd_ok = false;
+	$mdp_ok = false;
 
 	foreach ($request_login->fetchAll(PDO::FETCH_ASSOC) as $value)
 		foreach ($value as $value2) 

@@ -54,12 +54,17 @@
 			</form>
 			{else}
 				<article>
-					{foreach $data['uti_com'] as $uticom}
-						{if $uticom.UTI_ID == $com.UTI_ID}
-							<table border="1">
-								<tr><td style="background-color : grey; color : white;">Auteur : {$uticom.UTI_NOM} {$uticom.UTI_PRENOM}
-						{/if}
-					{/foreach}
+					{if isset($data['uti_com'])}
+						{foreach $data['uti_com'] as $uticom}
+							{if $uticom.UTI_ID == $com.UTI_ID}
+								<table border="1">
+									<tr><td style="background-color : grey; color : white;">Auteur : {$uticom.UTI_NOM} {$uticom.UTI_PRENOM}
+							{/if}
+						{/foreach}
+					{else}
+						<table border="1">
+									<tr><td style="background-color : grey; color : white;">Auteur : Anonyme
+					{/if}
 					- Date : {$com.COM_DATE}
 					</td></tr>
 					<tr><td>Commentaire : {$com.COM_TEXTE}</td></tr>
@@ -71,7 +76,7 @@
 	{/if}
 
 	{foreach $data['uti_info'] as $uti_info}
-		{if isset($smarty.session.login) and $smarty.session.login != $uti_info.UTI_LOGIN}
+		{if isset($smarty.session.login)}
 			<form id="form" action="" method="post">
 				<fieldset>
 					<legend>Nouveau commentaire</legend>

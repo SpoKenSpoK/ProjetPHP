@@ -6,7 +6,7 @@
 		if(isset($_REQUEST['newcom'])){
 			$now=date('Y-m-d H:i:s');
 			$PDO_BDD->exec("INSERT INTO t_commentaire_com
-				VALUES ('DEFAULT','".$_REQUEST['newcom']."','$now','".$_SESSION['id']."','".$_REQUEST['idr']."')");
+				VALUES ('DEFAULT','".addslashes($_REQUEST['newcom'])."','$now','".$_SESSION['id']."','".addslashes($_REQUEST['idr'])."')");
 		}
 
 		if(isset($_POST['del_com'])){
@@ -43,12 +43,21 @@
 
 		$data['rct_com'] = $request->fetchAll(PDO::FETCH_ASSOC);
 
-		$request=$PDO_BDD->query('SELECT UTI_NOM, UTI_PRENOM, UTI_ID
-		FROM t_utilisateur_uti
-		WHERE UTI_ID IN (SELECT UTI_ID
+		$request=$PDO_BDD->query("SELECT UTI_ID
 						FROM t_commentaire_com
-						where RCT_ID = '.$_REQUEST['idr'].')');
-		$data['uti_com'] = $request->fetchAll(PDO::FETCH_ASSOC);
+						where RCT_ID = ".$_REQUEST['idr'])->fetchAll(PDO::FETCH_ASSOC);
+		foreach($request as $value)
+			foreach($value as $uti_id)
+				if($uti_id != null){
+					$request=$PDO_BDD->query('SELECT UTI_NOM, UTI_PRENOM, UTI_ID
+					FROM t_utilisateur_uti
+					WHERE UTI_ID IN (SELECT UTI_ID
+									FROM t_commentaire_com
+									where RCT_ID = '.$_REQUEST['idr'].')');
+					$data['uti_com'] = $request->fetchAll(PDO::FETCH_ASSOC);
+				}
+
+
 
 	}
 

@@ -33,7 +33,7 @@
 		<img src={"./media/"|cat:$smarty.session.login|cat:"/"|cat:$smarty.session.avatar} height="150" width="150">
 		<form action="" method="post" enctype="multipart/form-data">
 			<input type="submit" name="modif_profil" value="Modifier"/>
-			<input type="submit" name="delete_profil" value="Supprimer le compte"/>
+			<input onclick="return(confirm('Etes-vous sûr de vouloir supprimer votre profil?'))" type="submit" name="delete_profil" value="Supprimer le compte"/>
 		</form>
 	</div>
 
